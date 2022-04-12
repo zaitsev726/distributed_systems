@@ -50,17 +50,4 @@ public abstract class ApiClient {
         return HttpRequest.newBuilder()
                 .uri(new URI("http://localhost:3000/api/v1/" + DEFAULT_STORAGE_URL + destination));
     }
-
-    public final <T> ResponseDTO<T> defaultGetAllRequest() {
-        try {
-            var request = builtGetRequest("");
-
-            var response = client.send(request, HttpResponse.BodyHandlers.ofString());
-            return objectMapper.readValue(response.body(), new TypeReference<>() {
-            });
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return new ResponseDTO<T>(false, (T) new ArrayList<T>());
-    }
 }
