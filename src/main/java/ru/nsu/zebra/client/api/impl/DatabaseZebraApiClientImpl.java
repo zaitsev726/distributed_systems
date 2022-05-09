@@ -3,22 +3,26 @@ package ru.nsu.zebra.client.api.impl;
 import com.fasterxml.jackson.core.type.TypeReference;
 import org.apache.http.client.utils.URIBuilder;
 import ru.nsu.zebra.client.api.DatabaseZebraApiClient;
+import ru.nsu.zebra.client.dto.QueryType;
 import ru.nsu.zebra.client.dto.ResponseDTO;
 import ru.nsu.zebra.client.dto.WrappedResponse;
 import ru.nsu.zebra.client.dto.database.DatabaseCreateDTO;
 import ru.nsu.zebra.client.dto.database.DatabaseResponseDTO;
 import ru.nsu.zebra.client.dto.database.DatabaseStorageCreateDTO;
+import ru.nsu.zebra.client.dto.database.UpdateRecordRequestDTO;
 import ru.nsu.zebra.client.dto.scan.ScanRequestDTO;
 import ru.nsu.zebra.client.dto.scan.ScanResponseDTO;
 import ru.nsu.zebra.client.dto.search.SearchRequestDTO;
 import ru.nsu.zebra.client.dto.search.SearchResponseDTO;
+import ru.nsu.zebra.client.migration.Formatter;
 
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-import java.util.Collection;
-import java.util.List;
+import java.time.Instant;
+import java.util.*;
 
 public class DatabaseZebraApiClientImpl extends ApiClient implements DatabaseZebraApiClient {
+    private final Formatter formatter = Formatter.INSTANCE;
 
     public DatabaseZebraApiClientImpl() {
         this.DEFAULT_STORAGE_URL = "databases";
@@ -85,6 +89,24 @@ public class DatabaseZebraApiClientImpl extends ApiClient implements DatabaseZeb
     }
 
     @Override
+    public boolean updateRecord(String id, UpdateRecordRequestDTO updateRecordDTO) {
+        try {
+            var requestBody = objectMapper.writeValueAsString(updateRecordDTO);
+            var request = builtPostRequest("/" + id + "/updateRecord",
+                    HttpRequest.BodyPublishers.ofString(requestBody));
+
+            var response = client.send(request, HttpResponse.BodyHandlers.ofString());
+
+            var parsed = objectMapper.readValue(response.body(), new TypeReference<ResponseDTO>() {
+            });
+            return parsed.success();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    @Override
     public boolean delete(String id) {
         try {
             var request = builtDeleteRequest("/" + id);
@@ -130,13 +152,14 @@ public class DatabaseZebraApiClientImpl extends ApiClient implements DatabaseZeb
     @Override
     public ResponseDTO<SearchResponseDTO> search(String id, SearchRequestDTO requestDTO) {
         try {
-            var uri =  new URIBuilder("http://localhost:3000/api/v1/databases/" + id + "/search")
+            var uri = new URIBuilder("http://localhost:3000/api/v1/databases/" + id + "/search")
                     .addParameters(requestDTO.convertToParamList())
                     .build();
             var request = HttpRequest.newBuilder().uri(uri).GET().build();
             var response = client.send(request, HttpResponse.BodyHandlers.ofString());
             var wrappedResponse = objectMapper.readValue(response.body(),
-                    new TypeReference<WrappedResponse<SearchResponseDTO>>() {});
+                    new TypeReference<WrappedResponse<SearchResponseDTO>>() {
+                    });
             return wrappedResponse.response();
         } catch (Exception e) {
             e.printStackTrace();
@@ -147,18 +170,52 @@ public class DatabaseZebraApiClientImpl extends ApiClient implements DatabaseZeb
     @Override
     public ResponseDTO<ScanResponseDTO> scan(String id, ScanRequestDTO requestDTO) {
         try {
-            var uri =  new URIBuilder("http://localhost:3000/api/v1/databases/" + id + "/scan")
+            var uri = new URIBuilder("http://localhost:3000/api/v1/databases/" + id + "/scan")
                     .addParameters(requestDTO.convertToParamList())
                     .build();
             var request = HttpRequest.newBuilder().uri(uri).GET().build();
             var response = client.send(request, HttpResponse.BodyHandlers.ofString());
             var wrappedResponse = objectMapper.readValue(response.body(),
-                    new TypeReference<WrappedResponse<ScanResponseDTO>>() {});
+                    new TypeReference<WrappedResponse<ScanResponseDTO>>() {
+                    });
             return wrappedResponse.response();
         } catch (Exception e) {
             e.printStackTrace();
         }
         return null;
+    }
+
+    @Override
+    public ResponseDTO<ScanResponseDTO> findAllWithCreatedDateIsAfter(String id, Instant date) {
+        try {
+            var formattedDate = formatter.formatInstant(date);
+            return scan(id, new ScanRequestDTO(
+                    QueryType.PQF,
+                    "@1=1011 @6=3 " + formattedDate,
+                    null,
+                    null
+            ));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return new ResponseDTO<>(false, null);
+    }
+
+    @Override
+    public ResponseDTO<ScanResponseDTO> findAllWithModifiedDateIsAfter(String id, Instant date) {
+        try {
+            var formattedDate = formatter.formatInstant(date);
+            return scan(id, new ScanRequestDTO(
+                    QueryType.PQF,
+                    "@1=1012 @6=3 " + formattedDate,
+                    null,
+                    null
+            ));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return new ResponseDTO<>(false, null);
     }
 
     private ResponseDTO<DatabaseResponseDTO> defaultResponse() {

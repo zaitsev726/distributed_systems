@@ -4,11 +4,13 @@ import ru.nsu.zebra.client.dto.database.DatabaseCreateDTO;
 import ru.nsu.zebra.client.dto.database.DatabaseResponseDTO;
 import ru.nsu.zebra.client.dto.ResponseDTO;
 import ru.nsu.zebra.client.dto.database.DatabaseStorageCreateDTO;
+import ru.nsu.zebra.client.dto.database.UpdateRecordRequestDTO;
 import ru.nsu.zebra.client.dto.scan.ScanRequestDTO;
 import ru.nsu.zebra.client.dto.scan.ScanResponseDTO;
 import ru.nsu.zebra.client.dto.search.SearchRequestDTO;
 import ru.nsu.zebra.client.dto.search.SearchResponseDTO;
 
+import java.time.Instant;
 import java.util.Collection;
 
 public interface DatabaseZebraApiClient {
@@ -20,6 +22,8 @@ public interface DatabaseZebraApiClient {
 
     ResponseDTO<DatabaseResponseDTO> update(String id, DatabaseCreateDTO updateDTO);
 
+    boolean updateRecord(String id, UpdateRecordRequestDTO updateRecordDTO);
+
     boolean delete(String id);
 
     boolean insertStorage(String id, DatabaseStorageCreateDTO storageCreateDTO);
@@ -29,4 +33,8 @@ public interface DatabaseZebraApiClient {
     ResponseDTO<SearchResponseDTO> search(String id, SearchRequestDTO requestDTO);
 
     ResponseDTO<ScanResponseDTO> scan(String id, ScanRequestDTO requestDTO);
+
+    ResponseDTO<ScanResponseDTO> findAllWithCreatedDateIsAfter(String id, Instant date);
+
+    ResponseDTO<ScanResponseDTO> findAllWithModifiedDateIsAfter(String id, Instant date);
 }

@@ -4,11 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2ebee159-7bea-422d-a4c5-cd0fcf9f88d6" name="Changes" comment="create client">
+    <list default="true" id="2ebee159-7bea-422d-a4c5-cd0fcf9f88d6" name="Changes" comment="delete unusable code">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/zebra/client/api/RecordAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/zebra/client/dto/database/UpdateRecordRequestDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/zebra/client/migration/Formatter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/zebra/client/migration/MigrationExecutor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/zebra/client/migration/MigrationManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/zebra/client/migration/TimestampStorage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/zebra/client/migration/impl/MigrationExecutorDefaultImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/zebra/client/migration/impl/TimestampStorageJsonImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/data2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/IntegrationMigrationTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/zebra/client/DatabaseClient.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/zebra/client/RepositoryClient.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/zebra/client/StorageClient.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/zebra/client/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/zebra/client/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/zebra/client/api/DatabaseZebraApiClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/zebra/client/api/DatabaseZebraApiClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/zebra/client/api/impl/DatabaseZebraApiClientImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/zebra/client/api/impl/DatabaseZebraApiClientImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/IntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/IntegrationCreationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/data.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,13 +34,21 @@
       <list>
         <option value="Record" />
         <option value="Enum" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="27hQkGJhKXkdVLX4ZDShxuRRdDe" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -38,65 +60,55 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../distributed_systems" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
-  <component name="RunManager" selected="JUnit.IntegrationTest">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ru.nsu.zebra.client.Main" />
-      <module name="distributed_system" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="IntegrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.IntegrationMigrationTest.migrateDataFromExistedDatabases">
+    <configuration name="IntegrationCreationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="distributed_system" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="IntegrationTest" />
+      <option name="MAIN_CLASS_NAME" value="IntegrationCreationTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="IntegrationTest.createRepositoryAndFillIt" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="IntegrationCreationTest.createRepositoryAndFillIt" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="distributed_system" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="IntegrationTest" />
+      <option name="MAIN_CLASS_NAME" value="IntegrationCreationTest" />
       <option name="METHOD_NAME" value="createRepositoryAndFillIt" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RepositoryCreationTest.createRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="IntegrationMigrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="distributed_system" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="repository.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="repository" />
-      <option name="MAIN_CLASS_NAME" value="repository.RepositoryCreationTest" />
-      <option name="METHOD_NAME" value="createRepositoryTest" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="IntegrationMigrationTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="IntegrationMigrationTest.createRepositoryAndFillIt" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="distributed_system" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="IntegrationMigrationTest" />
+      <option name="METHOD_NAME" value="createRepositoryAndFillIt" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RepositoryGetAllTest.createRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="IntegrationMigrationTest.migrateDataFromExistedDatabases" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="distributed_system" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="repository.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="repository" />
-      <option name="MAIN_CLASS_NAME" value="repository.RepositoryGetAllTest" />
-      <option name="METHOD_NAME" value="createRepositoryTest" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="IntegrationMigrationTest" />
+      <option name="METHOD_NAME" value="migrateDataFromExistedDatabases" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -104,11 +116,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.IntegrationTest" />
-        <item itemvalue="JUnit.IntegrationTest.createRepositoryAndFillIt" />
-        <item itemvalue="JUnit.RepositoryGetAllTest.createRepositoryTest" />
-        <item itemvalue="JUnit.RepositoryCreationTest.createRepositoryTest" />
-        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.IntegrationMigrationTest.migrateDataFromExistedDatabases" />
+        <item itemvalue="JUnit.IntegrationMigrationTest.createRepositoryAndFillIt" />
+        <item itemvalue="JUnit.IntegrationMigrationTest" />
+        <item itemvalue="JUnit.IntegrationCreationTest" />
+        <item itemvalue="JUnit.IntegrationCreationTest.createRepositoryAndFillIt" />
       </list>
     </recent_temporary>
   </component>
@@ -120,7 +132,10 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1649769980349</updated>
-      <workItem from="1649769982016" duration="26015000" />
+      <workItem from="1649769982016" duration="26134000" />
+      <workItem from="1651997069616" duration="126000" />
+      <workItem from="1651997244349" duration="10006000" />
+      <workItem from="1652077719285" duration="11888000" />
     </task>
     <task id="LOCAL-00001" summary="create client">
       <created>1649795222566</created>
@@ -129,7 +144,21 @@
       <option name="project" value="LOCAL" />
       <updated>1649795222566</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="delete unusable classes">
+      <created>1649796276369</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1649796276369</updated>
+    </task>
+    <task id="LOCAL-00003" summary="delete unusable code">
+      <created>1649796351774</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1649796351774</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -145,28 +174,51 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="create client" />
-    <option name="LAST_COMMIT_MESSAGE" value="create client" />
+    <MESSAGE value="delete unusable classes" />
+    <MESSAGE value="delete unusable code" />
+    <option name="LAST_COMMIT_MESSAGE" value="delete unusable code" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/ru/nsu/zebra/client/Main.java</url>
-          <line>5</line>
+          <line>13</line>
           <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/ru/nsu/zebra/client/api/impl/DatabaseZebraApiClientImpl.java</url>
-          <line>47</line>
+          <line>51</line>
           <option name="timeStamp" value="19" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/ru/nsu/zebra/client/api/impl/StorageZebraApiClientImpl.java</url>
           <line>37</line>
           <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/nsu/zebra/client/api/impl/DatabaseZebraApiClientImpl.java</url>
+          <line>157</line>
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/nsu/zebra/client/api/impl/DatabaseZebraApiClientImpl.java</url>
+          <line>172</line>
+          <option name="timeStamp" value="43" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/nsu/zebra/client/api/impl/DatabaseZebraApiClientImpl.java</url>
+          <line>125</line>
+          <option name="timeStamp" value="45" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/nsu/zebra/client/api/impl/DatabaseZebraApiClientImpl.java</url>
+          <line>93</line>
+          <option name="timeStamp" value="46" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/ru/nsu/zebra/client/api/impl/StorageZebraApiClientImpl.java</url>
@@ -176,21 +228,14 @@
           </properties>
           <option name="timeStamp" value="22" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/nsu/zebra/client/api/impl/DatabaseZebraApiClientImpl.java</url>
-          <line>147</line>
-          <properties class="ru.nsu.zebra.client.api.impl.DatabaseZebraApiClientImpl" method="scan">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="35" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="ru.nsu.zebra.client.dto.search.SearchResponseDTO" memberName="numberOfRecords" />
+      </pinned-members>
+    </pin-to-top-manager>
     <watches-manager>
-      <configuration name="JUnit">
-        <watch expression="objectMapper." language="JAVA" />
-        <watch expression="objectMapper.writeValueAsString(createData)" language="JAVA" />
-      </configuration>
       <configuration name="Application">
         <watch expression="new File(&quot;./resources/data.xml&quot;)" language="JAVA" custom="java.io.File" />
         <watch expression="file.exists()" language="JAVA" />

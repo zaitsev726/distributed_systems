@@ -7,13 +7,15 @@ import ru.nsu.zebra.client.dto.database.DatabaseCreateDTO;
 import ru.nsu.zebra.client.dto.database.DatabaseStorageCreateDTO;
 import ru.nsu.zebra.client.dto.repository.RepositoryCreateDTO;
 import ru.nsu.zebra.client.dto.scan.ScanRequestDTO;
+import ru.nsu.zebra.client.dto.scan.ScanTermDTO;
 import ru.nsu.zebra.client.dto.search.SearchRequestDTO;
 
 import java.io.File;
+import java.util.stream.Collectors;
 
 import static org.junit.Assert.assertTrue;
 
-public class IntegrationTest {
+public class IntegrationCreationTest {
 
     private final DatabaseZebraApiClientImpl databaseClient = new DatabaseZebraApiClientImpl();
     private final RepositoryZebraApiClientImpl repositoryClient = new RepositoryZebraApiClientImpl();
