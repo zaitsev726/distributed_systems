@@ -4,25 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2ebee159-7bea-422d-a4c5-cd0fcf9f88d6" name="Changes" comment="delete unusable code">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/zebra/client/api/RecordAction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/zebra/client/dto/database/UpdateRecordRequestDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/zebra/client/migration/Formatter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/zebra/client/migration/MigrationExecutor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/zebra/client/migration/MigrationManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/zebra/client/migration/TimestampStorage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/zebra/client/migration/impl/MigrationExecutorDefaultImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/zebra/client/migration/impl/TimestampStorageJsonImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/data2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/IntegrationMigrationTest.java" afterDir="false" />
+    <list default="true" id="2ebee159-7bea-422d-a4c5-cd0fcf9f88d6" name="Changes" comment="add migration functional">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/zebra/client/domain/Context.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/zebra/client/domain/Node.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/zebra/client/domain/NodeConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/zebra/client/migration/impl/RepositoryBalancerManagerImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/RepositoryBalancerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/zebra/client/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/zebra/client/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/zebra/client/api/DatabaseZebraApiClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/zebra/client/api/DatabaseZebraApiClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/zebra/client/api/impl/DatabaseZebraApiClientImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/zebra/client/api/impl/DatabaseZebraApiClientImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/IntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/IntegrationCreationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/data.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/zebra/client/migration/MigrationManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/zebra/client/migration/RepositoryBalancerManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,8 +23,8 @@
       <list>
         <option value="Record" />
         <option value="Enum" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -61,49 +50,15 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
-  <component name="RunManager" selected="JUnit.IntegrationMigrationTest.migrateDataFromExistedDatabases">
-    <configuration name="IntegrationCreationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="distributed_system" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="IntegrationCreationTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="IntegrationCreationTest.createRepositoryAndFillIt" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="distributed_system" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="IntegrationCreationTest" />
-      <option name="METHOD_NAME" value="createRepositoryAndFillIt" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="IntegrationMigrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="distributed_system" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="IntegrationMigrationTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="IntegrationMigrationTest.createRepositoryAndFillIt" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="distributed_system" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="IntegrationMigrationTest" />
-      <option name="METHOD_NAME" value="createRepositoryAndFillIt" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.RepositoryBalancerTest.getFullNodeScoreTest">
     <configuration name="IntegrationMigrationTest.migrateDataFromExistedDatabases" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="distributed_system" />
       <option name="PACKAGE_NAME" value="" />
@@ -114,13 +69,52 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="RepositoryBalancerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="distributed_system" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="RepositoryBalancerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RepositoryBalancerTest.getFullNodeScoreTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="distributed_system" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="RepositoryBalancerTest" />
+      <option name="METHOD_NAME" value="getFullNodeScoreTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RepositoryBalancerTest.getNodeScoreTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="distributed_system" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="RepositoryBalancerTest" />
+      <option name="METHOD_NAME" value="getNodeScoreTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RepositoryBalancerTest.getNodeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="distributed_system" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="RepositoryBalancerTest" />
+      <option name="METHOD_NAME" value="getNodeTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.RepositoryBalancerTest.getFullNodeScoreTest" />
+        <item itemvalue="JUnit.RepositoryBalancerTest.getNodeTest" />
+        <item itemvalue="JUnit.RepositoryBalancerTest" />
+        <item itemvalue="JUnit.RepositoryBalancerTest.getNodeScoreTest" />
         <item itemvalue="JUnit.IntegrationMigrationTest.migrateDataFromExistedDatabases" />
-        <item itemvalue="JUnit.IntegrationMigrationTest.createRepositoryAndFillIt" />
-        <item itemvalue="JUnit.IntegrationMigrationTest" />
-        <item itemvalue="JUnit.IntegrationCreationTest" />
-        <item itemvalue="JUnit.IntegrationCreationTest.createRepositoryAndFillIt" />
       </list>
     </recent_temporary>
   </component>
@@ -135,7 +129,11 @@
       <workItem from="1649769982016" duration="26134000" />
       <workItem from="1651997069616" duration="126000" />
       <workItem from="1651997244349" duration="10006000" />
-      <workItem from="1652077719285" duration="11888000" />
+      <workItem from="1652077719285" duration="12030000" />
+      <workItem from="1652416715883" duration="1758000" />
+      <workItem from="1652855423332" duration="782000" />
+      <workItem from="1653729234459" duration="7800000" />
+      <workItem from="1653812099602" duration="1074000" />
     </task>
     <task id="LOCAL-00001" summary="create client">
       <created>1649795222566</created>
@@ -158,7 +156,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649796351774</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="add migration functional">
+      <created>1652093421148</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1652093421148</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -180,7 +185,9 @@
     <MESSAGE value="create client" />
     <MESSAGE value="delete unusable classes" />
     <MESSAGE value="delete unusable code" />
-    <option name="LAST_COMMIT_MESSAGE" value="delete unusable code" />
+    <MESSAGE value="add migration functional" />
+    <option name="LAST_COMMIT_MESSAGE" value="add migration functional" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -236,6 +243,11 @@
       </pinned-members>
     </pin-to-top-manager>
     <watches-manager>
+      <configuration name="JUnit">
+        <watch expression="node.getNodeScore()" language="JAVA" />
+        <watch expression="firstNode.getNodeScore()" language="JAVA" />
+        <watch expression="secondNode.getNodeScore()" language="JAVA" />
+      </configuration>
       <configuration name="Application">
         <watch expression="new File(&quot;./resources/data.xml&quot;)" language="JAVA" custom="java.io.File" />
         <watch expression="file.exists()" language="JAVA" />
